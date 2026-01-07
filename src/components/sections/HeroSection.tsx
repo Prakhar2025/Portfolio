@@ -86,7 +86,7 @@ export default function HeroSection() {
                         variants={fadeInUp}
                         className="text-5xl sm:text-6xl lg:text-8xl font-bold tracking-tight text-white mb-4"
                     >
-                        Your Name
+                        Prakhar Shukla
                     </motion.h1>
 
                     {/* Animated Role */}

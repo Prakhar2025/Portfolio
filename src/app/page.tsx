@@ -2,6 +2,8 @@
 import {
   HeroSection,
   WorkSection,
+  ExperienceSection,
+  ResearchSection,
   SkillsSection,
   AchievementsSection,
   AboutSection,
@@ -13,6 +15,8 @@ export default function Home() {
     <>
       <HeroSection />
       <WorkSection />
+      <ExperienceSection />
+      <ResearchSection />
       <SkillsSection />
       <AchievementsSection />
       <AboutSection />

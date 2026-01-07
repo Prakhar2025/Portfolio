@@ -5,7 +5,6 @@ export interface SocialLink {
 }
 
 export const socialLinks: SocialLink[] = [
-    { label: 'GitHub', href: 'https://github.com' },
-    { label: 'LinkedIn', href: 'https://linkedin.com' },
-    { label: 'Twitter', href: 'https://twitter.com' },
+    { label: 'GitHub', href: 'https://github.com/Prakhar2025' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/prakhar-shukla-471649261' },
 ];

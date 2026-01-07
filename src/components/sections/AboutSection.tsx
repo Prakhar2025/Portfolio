@@ -60,26 +60,21 @@ export default function AboutSection() {
                         className="space-y-6"
                     >
                         <p className="text-lg text-white/70 leading-relaxed">
-                            I&apos;m a software engineer passionate about building products that solve real problems.
-                            With expertise spanning full-stack development, AI/ML, and cloud infrastructure,
-                            I bring ideas from concept to production.
+                            I&apos;m a software engineer focused on building real-world systems across full-stack development and applied AI. I enjoy working end-to-end — from designing clean interfaces and APIs to implementing machine learning models that solve practical problems.
                         </p>
                         <p className="text-lg text-white/70 leading-relaxed">
-                            Currently focused on building AI-powered SaaS products and contributing to
-                            open-source tools. I believe in clean code, thoughtful architecture,
-                            and continuous learning.
+                            My work spans AI-powered SaaS platforms, deepfake detection systems, NLP applications, and mobile apps, with an emphasis on production-ready code and thoughtful architecture.
                         </p>
                         <p className="text-lg text-white/70 leading-relaxed">
-                            When not coding, you&apos;ll find me exploring new technologies, mentoring developers,
-                            or working on my next startup idea.
+                            Shipped multiple production-ready web, AI, and mobile systems. Currently, I&apos;m building and learning by shipping projects, contributing to client work, and continuously improving my engineering depth across software and AI.
                         </p>
 
                         {/* Stats */}
                         <div className="grid grid-cols-3 gap-6 pt-6 border-t border-white/10">
                             {[
-                                { value: '5+', label: 'Years Experience' },
-                                { value: '50+', label: 'Projects Shipped' },
-                                { value: '10K+', label: 'GitHub Stars' },
+                                { value: '1+', label: 'Years Experience' },
+                                { value: '10+', label: 'Projects Built' },
+                                { value: '4', label: 'Live Deployments' },
                             ].map((stat) => (
                                 <div key={stat.label}>
                                     <div className="text-2xl font-bold text-white">{stat.value}</div>

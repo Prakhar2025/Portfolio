@@ -8,6 +8,8 @@ import { navAnimation } from '@/lib/animations';
 
 const navLinks = [
     { label: 'Work', href: '#work' },
+    { label: 'Experience', href: '#experience' },
+    { label: 'Research', href: '#research' },
     { label: 'Skills', href: '#skills' },
     { label: 'Achievements', href: '#achievements' },
     { label: 'About', href: '#about' },
@@ -33,8 +35,8 @@ export default function Header() {
             initial="hidden"
             animate="visible"
             className={`fixed top-0 z-50 w-full transition-all duration-500 ${isScrolled
-                    ? 'bg-black/50 backdrop-blur-xl border-b border-white/5'
-                    : 'bg-transparent'
+                ? 'bg-black/50 backdrop-blur-xl border-b border-white/5'
+                : 'bg-transparent'
                 }`}
         >
             <Container>

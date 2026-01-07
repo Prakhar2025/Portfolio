@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title: 'Portfolio | Software Engineer · AI/ML Engineer · SaaS Builder',
   description: 'Building exceptional digital experiences with modern technologies. Full-stack developer specializing in AI/ML and scalable SaaS products.',
   keywords: ['Software Engineer', 'AI Engineer', 'ML Engineer', 'SaaS', 'Full Stack Developer'],
-  authors: [{ name: 'Your Name' }],
+  authors: [{ name: 'Prakhar Shukla' }],
   openGraph: {
     type: 'website',
     locale: 'en_US',

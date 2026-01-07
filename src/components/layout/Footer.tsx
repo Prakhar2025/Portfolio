@@ -6,9 +6,8 @@ import { Container } from '@/components/ui';
 import { fadeInUp, defaultViewport } from '@/lib/animations';
 
 const socialLinks = [
-    { label: 'GitHub', href: 'https://github.com' },
-    { label: 'LinkedIn', href: 'https://linkedin.com' },
-    { label: 'Twitter', href: 'https://twitter.com' },
+    { label: 'GitHub', href: 'https://github.com/Prakhar2025' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/prakhar-shukla-471649261' },
 ];
 
 export default function Footer() {
@@ -23,7 +22,7 @@ export default function Footer() {
                     className="py-12 flex flex-col md:flex-row items-center justify-between gap-6"
                 >
                     <p className="text-sm text-white/40">
-                        © {new Date().getFullYear()} Portfolio. Built with precision.
+                        © {new Date().getFullYear()} Prakhar Shukla. Built with precision.
                     </p>
 
                     <ul className="flex items-center gap-6">

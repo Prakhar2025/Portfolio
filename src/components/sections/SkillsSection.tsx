@@ -7,20 +7,20 @@ import { fadeInUp, staggerContainer, staggerFast, defaultViewport } from '@/lib/
 
 const skillCategories = [
     {
-        name: 'Languages & Frameworks',
-        skills: ['TypeScript', 'Python', 'Go', 'React', 'Next.js', 'Node.js', 'FastAPI'],
+        name: 'Languages',
+        skills: ['C++', 'JavaScript', 'Python', 'SQL', 'TypeScript'],
     },
     {
-        name: 'AI / ML',
-        skills: ['TensorFlow', 'PyTorch', 'LangChain', 'OpenAI', 'Hugging Face', 'scikit-learn'],
+        name: 'Web & Mobile Development',
+        skills: ['React', 'Next.js', 'Node.js', 'FastAPI', 'Flask', 'Streamlit', 'React Native (Expo)', 'HTML5', 'CSS3', 'REST APIs'],
     },
     {
-        name: 'Cloud & DevOps',
-        skills: ['AWS', 'GCP', 'Docker', 'Kubernetes', 'Terraform', 'GitHub Actions'],
+        name: 'AI / Machine Learning',
+        skills: ['Deep Learning (CNN, LSTM)', 'Computer Vision', 'NLP (Text Classification)', 'TensorFlow', 'PyTorch', 'OpenCV'],
     },
     {
-        name: 'Databases',
-        skills: ['PostgreSQL', 'MongoDB', 'Redis', 'Pinecone', 'Supabase'],
+        name: 'Cloud, Databases & Tools',
+        skills: ['Vercel', 'Render', 'Firebase', 'PostgreSQL', 'MongoDB', 'Firebase Firestore', 'Git', 'GitHub'],
     },
 ];
 

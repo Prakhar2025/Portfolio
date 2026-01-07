@@ -8,35 +8,35 @@ import { fadeInUp, staggerContainer, defaultViewport } from '@/lib/animations';
 const projects = [
     {
         id: 1,
-        title: 'AI Analytics Platform',
-        description: 'Real-time ML-powered analytics dashboard for enterprise data insights.',
-        tech: ['Next.js', 'Python', 'TensorFlow', 'PostgreSQL'],
-        live: '#',
-        github: '#',
+        title: 'EthAum AI — AI-Powered SaaS Marketplace',
+        description: 'AI-driven marketplace for Series A–D startups to accelerate enterprise adoption.',
+        tech: ['Next.js', 'TypeScript', 'Python', 'FastAPI', 'AI Scoring'],
+        live: 'https://ethaumai.vercel.app',
+        github: 'https://github.com/Prakhar2025/EthAum-Venture-Partners',
     },
     {
         id: 2,
-        title: 'SaaS Starter Kit',
-        description: 'Production-ready boilerplate with auth, billing, and multi-tenancy.',
-        tech: ['Next.js', 'TypeScript', 'Stripe', 'Prisma'],
-        live: '#',
-        github: '#',
+        title: 'Truth Shield — Deepfake Detection System',
+        description: 'AI-powered system for detecting manipulated images and videos.',
+        tech: ['Python', 'TensorFlow', 'OpenCV', 'Flask', 'CNN-LSTM'],
+        live: 'https://truthshieldai.vercel.app/',
+        github: 'https://github.com/Prakhar2025/Truth-Shield',
     },
     {
         id: 3,
-        title: 'Neural Code Assistant',
-        description: 'AI-powered code completion and review tool for development teams.',
-        tech: ['React', 'Node.js', 'OpenAI', 'WebSocket'],
-        live: '#',
-        github: '#',
+        title: 'NLP Legal Compliance System',
+        description: 'Automated contract analysis platform for legal risk and compliance detection.',
+        tech: ['JavaScript', 'Node.js', 'NLP', 'React', 'REST APIs'],
+        live: 'https://legal-compliance-monitor.netlify.app/',
+        github: 'https://github.com/Prakhar2025/NLP-Legal-Compilance-System',
     },
     {
         id: 4,
-        title: 'Cloud Infrastructure CLI',
-        description: 'Developer tool for managing multi-cloud deployments via terminal.',
-        tech: ['Go', 'AWS', 'GCP', 'Terraform'],
-        live: '#',
-        github: '#',
+        title: 'LearnSphere — Secure Mobile Learning Platform',
+        description: 'Cross-platform LMS featuring a custom chromeless video engine and scalable backend for premium content delivery.',
+        tech: ['React Native', 'Expo', 'TypeScript', 'Node.js', 'Firebase', 'Redux'],
+        live: '',
+        github: 'https://github.com/Prakhar2025/course',
     },
 ];
 
@@ -95,19 +95,21 @@ export default function WorkSection() {
 
                                     {/* Actions */}
                                     <div className="flex gap-3">
-                                        <MagneticButton
-                                            href={project.live}
-                                            variant="secondary"
-                                            size="sm"
-                                            external
-                                        >
-                                            <span className="flex items-center gap-2">
-                                                Live
-                                                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                                </svg>
-                                            </span>
-                                        </MagneticButton>
+                                        {project.live && (
+                                            <MagneticButton
+                                                href={project.live}
+                                                variant="secondary"
+                                                size="sm"
+                                                external
+                                            >
+                                                <span className="flex items-center gap-2">
+                                                    Live
+                                                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                                    </svg>
+                                                </span>
+                                            </MagneticButton>
+                                        )}
                                         <MagneticButton
                                             href={project.github}
                                             variant="ghost"

@@ -1,6 +1,6 @@
 // Single-page portfolio with all sections
 import {
-  HomeSection,
+  HeroSection,
   WorkSection,
   SkillsSection,
   AchievementsSection,
@@ -11,7 +11,7 @@ import {
 export default function Home() {
   return (
     <>
-      <HomeSection />
+      <HeroSection />
       <WorkSection />
       <SkillsSection />
       <AchievementsSection />

@@ -1,15 +1,31 @@
-// Site footer with social links and copyright
+// Minimal dark theme footer
+'use client';
+
+import { motion } from 'framer-motion';
 import { Container } from '@/components/ui';
-import { socialLinks } from '@/data/social';
+import { fadeInUp, defaultViewport } from '@/lib/animations';
+
+const socialLinks = [
+    { label: 'GitHub', href: 'https://github.com' },
+    { label: 'LinkedIn', href: 'https://linkedin.com' },
+    { label: 'Twitter', href: 'https://twitter.com' },
+];
 
 export default function Footer() {
     return (
-        <footer className="border-t border-neutral-200 bg-neutral-50 py-12">
+        <footer className="border-t border-white/5 bg-black/50">
             <Container>
-                <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
-                    <p className="text-sm text-neutral-600">
-                        © {new Date().getFullYear()} Portfolio. All rights reserved.
+                <motion.div
+                    variants={fadeInUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={defaultViewport}
+                    className="py-12 flex flex-col md:flex-row items-center justify-between gap-6"
+                >
+                    <p className="text-sm text-white/40">
+                        © {new Date().getFullYear()} Portfolio. Built with precision.
                     </p>
+
                     <ul className="flex items-center gap-6">
                         {socialLinks.map((link) => (
                             <li key={link.href}>
@@ -17,15 +33,14 @@ export default function Footer() {
                                     href={link.href}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-neutral-600 transition-colors hover:text-neutral-900"
-                                    aria-label={link.label}
+                                    className="text-sm text-white/40 hover:text-white transition-colors duration-300"
                                 >
                                     {link.label}
                                 </a>
                             </li>
                         ))}
                     </ul>
-                </div>
+                </motion.div>
             </Container>
         </footer>
     );

@@ -1,10 +1,10 @@
-// Root layout with dark theme, smooth scroll, and custom cursor
+// Root layout with dark/light theme, smooth scroll, and custom cursor
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { Header, Footer } from '@/components/layout';
 import { CustomCursor } from '@/components/ui';
-import { SmoothScroll } from '@/components/providers';
+import { SmoothScroll, ThemeProvider, PageLoader } from '@/components/providers';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -12,21 +12,21 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Portfolio | Software Engineer · AI/ML Engineer · SaaS Builder',
+  title: 'Prakhar Shukla | Software Engineer · AI/ML Engineer',
   description: 'Building exceptional digital experiences with modern technologies. Full-stack developer specializing in AI/ML and scalable SaaS products.',
-  keywords: ['Software Engineer', 'AI Engineer', 'ML Engineer', 'SaaS', 'Full Stack Developer'],
+  keywords: ['Software Engineer', 'AI Engineer', 'ML Engineer', 'SaaS', 'Full Stack Developer', 'Prakhar Shukla'],
   authors: [{ name: 'Prakhar Shukla' }],
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://yourportfolio.com',
-    title: 'Portfolio | Software Engineer · AI/ML Engineer · SaaS Builder',
+    title: 'Prakhar Shukla | Software Engineer · AI/ML Engineer',
     description: 'Building exceptional digital experiences with modern technologies.',
-    siteName: 'Portfolio',
+    siteName: 'Prakhar Shukla Portfolio',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Portfolio | Software Engineer · AI/ML Engineer · SaaS Builder',
+    title: 'Prakhar Shukla | Software Engineer · AI/ML Engineer',
     description: 'Building exceptional digital experiences with modern technologies.',
   },
 };
@@ -37,14 +37,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
-      <body className={`${inter.variable} font-sans bg-[#0a0a0a] text-white antialiased`}>
-        <SmoothScroll>
-          <CustomCursor />
-          <Header />
-          <main>{children}</main>
-          <Footer />
-        </SmoothScroll>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${inter.variable} font-sans antialiased`}>
+        <ThemeProvider>
+          <PageLoader />
+          <SmoothScroll>
+            <CustomCursor />
+            <Header />
+            <main>{children}</main>
+            <Footer />
+          </SmoothScroll>
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -1,9 +1,17 @@
-// Contact section with form and social links
+// Contact section with EmailJS form
 'use client';
 
+import { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
 import { Container, SectionHeading, MagneticButton } from '@/components/ui';
 import { fadeInUp, staggerContainer, defaultViewport } from '@/lib/animations';
+
+// TODO: Replace these with your EmailJS credentials
+// Get them from https://www.emailjs.com/
+const EMAILJS_SERVICE_ID = 'service_kyz68uy';
+const EMAILJS_TEMPLATE_ID = 'template_js5gx51';
+const EMAILJS_PUBLIC_KEY = 'C2SP6b0sSwc6L6N4A';
 
 const socialLinks = [
     {
@@ -26,7 +34,38 @@ const socialLinks = [
     },
 ];
 
+type FormStatus = 'idle' | 'sending' | 'success' | 'error';
+
 export default function ContactSection() {
+    const formRef = useRef<HTMLFormElement>(null);
+    const [status, setStatus] = useState<FormStatus>('idle');
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+
+        if (!formRef.current) return;
+
+        setStatus('sending');
+
+        try {
+            await emailjs.sendForm(
+                EMAILJS_SERVICE_ID,
+                EMAILJS_TEMPLATE_ID,
+                formRef.current,
+                EMAILJS_PUBLIC_KEY
+            );
+            setStatus('success');
+            formRef.current.reset();
+
+            // Reset to idle after 5 seconds
+            setTimeout(() => setStatus('idle'), 5000);
+        } catch (error) {
+            console.error('EmailJS error:', error);
+            setStatus('error');
+            setTimeout(() => setStatus('idle'), 5000);
+        }
+    };
+
     return (
         <section id="contact" className="py-32 relative">
             {/* Background */}
@@ -55,9 +94,10 @@ export default function ContactSection() {
                 >
                     {/* Contact form */}
                     <motion.form
+                        ref={formRef}
                         variants={fadeInUp}
                         className="space-y-6"
-                        onSubmit={(e) => e.preventDefault()}
+                        onSubmit={handleSubmit}
                     >
                         <div className="grid sm:grid-cols-2 gap-6">
                             <div>
@@ -67,10 +107,11 @@ export default function ContactSection() {
                                 <input
                                     type="text"
                                     id="name"
-                                    name="name"
+                                    name="from_name"
                                     required
                                     placeholder="Your name"
-                                    className="w-full px-4 py-3 bg-white/[0.02] border border-white/10 rounded-lg text-white placeholder-white/30 focus:outline-none focus:border-violet-500/50 focus:ring-1 focus:ring-violet-500/50 transition-colors"
+                                    disabled={status === 'sending'}
+                                    className="w-full px-4 py-3 bg-white/[0.02] border border-white/10 rounded-lg text-white placeholder-white/30 focus:outline-none focus:border-violet-500/50 focus:ring-1 focus:ring-violet-500/50 transition-colors disabled:opacity-50"
                                 />
                             </div>
                             <div>
@@ -80,10 +121,11 @@ export default function ContactSection() {
                                 <input
                                     type="email"
                                     id="email"
-                                    name="email"
+                                    name="from_email"
                                     required
                                     placeholder="you@example.com"
-                                    className="w-full px-4 py-3 bg-white/[0.02] border border-white/10 rounded-lg text-white placeholder-white/30 focus:outline-none focus:border-violet-500/50 focus:ring-1 focus:ring-violet-500/50 transition-colors"
+                                    disabled={status === 'sending'}
+                                    className="w-full px-4 py-3 bg-white/[0.02] border border-white/10 rounded-lg text-white placeholder-white/30 focus:outline-none focus:border-violet-500/50 focus:ring-1 focus:ring-violet-500/50 transition-colors disabled:opacity-50"
                                 />
                             </div>
                         </div>
@@ -98,13 +140,40 @@ export default function ContactSection() {
                                 rows={5}
                                 required
                                 placeholder="Tell me about your project..."
-                                className="w-full px-4 py-3 bg-white/[0.02] border border-white/10 rounded-lg text-white placeholder-white/30 focus:outline-none focus:border-violet-500/50 focus:ring-1 focus:ring-violet-500/50 transition-colors resize-none"
+                                disabled={status === 'sending'}
+                                className="w-full px-4 py-3 bg-white/[0.02] border border-white/10 rounded-lg text-white placeholder-white/30 focus:outline-none focus:border-violet-500/50 focus:ring-1 focus:ring-violet-500/50 transition-colors resize-none disabled:opacity-50"
                             />
                         </div>
 
-                        <MagneticButton variant="primary" size="lg">
-                            Send Message
-                        </MagneticButton>
+                        <div className="flex items-center gap-4">
+                            <MagneticButton
+                                variant="primary"
+                                size="lg"
+                                disabled={status === 'sending'}
+                            >
+                                {status === 'sending' ? 'Sending...' : 'Send Message'}
+                            </MagneticButton>
+
+                            {/* Status messages */}
+                            {status === 'success' && (
+                                <motion.span
+                                    initial={{ opacity: 0, x: -10 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    className="text-sm text-emerald-400"
+                                >
+                                    ✓ Message sent successfully!
+                                </motion.span>
+                            )}
+                            {status === 'error' && (
+                                <motion.span
+                                    initial={{ opacity: 0, x: -10 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    className="text-sm text-red-400"
+                                >
+                                    Failed to send. Please try again.
+                                </motion.span>
+                            )}
+                        </div>
                     </motion.form>
 
                     {/* Divider */}

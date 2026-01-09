@@ -1,6 +1,7 @@
-// About section with professional bio
+// About section with professional bio and profile photo
 'use client';
 
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Container, SectionHeading } from '@/components/ui';
 import { fadeInUp, fadeInLeft, fadeInRight, defaultViewport } from '@/lib/animations';
@@ -24,8 +25,8 @@ export default function AboutSection() {
                     />
                 </motion.div>
 
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    {/* Image placeholder */}
+                <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                    {/* Profile Photo */}
                     <motion.div
                         variants={fadeInLeft}
                         initial="hidden"
@@ -33,19 +34,31 @@ export default function AboutSection() {
                         viewport={defaultViewport}
                         className="relative aspect-square max-w-md mx-auto lg:mx-0"
                     >
-                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-violet-500/20 to-fuchsia-500/20" />
-                        <div className="absolute inset-2 rounded-xl bg-white/[0.02] border border-white/[0.05] flex items-center justify-center">
-                            <span className="text-6xl">👨‍💻</span>
+                        {/* Glow effect */}
+                        <div className="absolute -inset-2 bg-gradient-to-br from-violet-500/20 via-fuchsia-500/10 to-violet-500/20 rounded-2xl blur-xl" />
+
+                        {/* Image container */}
+                        <div className="relative h-full rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02]">
+                            <Image
+                                src="/images/profile.jpg"
+                                alt="Prakhar Shukla"
+                                fill
+                                className="object-cover"
+                                priority
+                            />
+
+                            {/* Subtle overlay */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
                         </div>
 
                         {/* Decorative elements */}
                         <motion.div
-                            className="absolute -top-4 -right-4 w-24 h-24 rounded-full bg-violet-500/10 blur-2xl"
+                            className="absolute -top-4 -right-4 w-24 h-24 rounded-full bg-violet-500/10 blur-2xl -z-10"
                             animate={{ scale: [1, 1.2, 1] }}
                             transition={{ duration: 4, repeat: Infinity }}
                         />
                         <motion.div
-                            className="absolute -bottom-4 -left-4 w-32 h-32 rounded-full bg-fuchsia-500/10 blur-2xl"
+                            className="absolute -bottom-4 -left-4 w-32 h-32 rounded-full bg-fuchsia-500/10 blur-2xl -z-10"
                             animate={{ scale: [1, 1.3, 1] }}
                             transition={{ duration: 5, repeat: Infinity }}
                         />

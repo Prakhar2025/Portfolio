@@ -52,24 +52,41 @@ export default function Header() {
                     </motion.a>
 
                     {/* Desktop Navigation */}
-                    <ul className="hidden md:flex items-center gap-1">
-                        {navLinks.map((link, i) => (
-                            <motion.li
-                                key={link.href}
-                                initial={{ opacity: 0, y: -20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.1 * i + 0.3 }}
-                            >
-                                <a
-                                    href={link.href}
-                                    className="relative px-4 py-2 text-sm text-white/70 transition-colors hover:text-white group"
+                    <div className="hidden md:flex items-center gap-1">
+                        <ul className="flex items-center gap-1">
+                            {navLinks.map((link, i) => (
+                                <motion.li
+                                    key={link.href}
+                                    initial={{ opacity: 0, y: -20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.1 * i + 0.3 }}
                                 >
-                                    {link.label}
-                                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-px bg-white transition-all duration-300 group-hover:w-full" />
-                                </a>
-                            </motion.li>
-                        ))}
-                    </ul>
+                                    <a
+                                        href={link.href}
+                                        className="relative px-4 py-2 text-sm text-white/70 transition-colors hover:text-white group"
+                                    >
+                                        {link.label}
+                                        <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-px bg-white transition-all duration-300 group-hover:w-full" />
+                                    </a>
+                                </motion.li>
+                            ))}
+                        </ul>
+
+                        {/* Resume Button */}
+                        <motion.a
+                            href="/resume.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            initial={{ opacity: 0, y: -20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.1 * navLinks.length + 0.3 }}
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="ml-4 px-5 py-2 text-sm font-medium text-white bg-white/10 rounded-lg border border-white/10 hover:bg-white/15 hover:border-white/20 transition-all"
+                        >
+                            Resume
+                        </motion.a>
+                    </div>
 
                     {/* Mobile Menu Button */}
                     <button
@@ -126,6 +143,22 @@ export default function Header() {
                                         </a>
                                     </motion.li>
                                 ))}
+                                {/* Mobile Resume Link */}
+                                <motion.li
+                                    initial={{ opacity: 0, x: -20 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ delay: navLinks.length * 0.05 }}
+                                >
+                                    <a
+                                        href="/resume.pdf"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        onClick={() => setIsOpen(false)}
+                                        className="block py-3 text-lg text-violet-400 hover:text-violet-300 transition-colors"
+                                    >
+                                        Resume ↗
+                                    </a>
+                                </motion.li>
                             </ul>
                         </Container>
                     </motion.div>

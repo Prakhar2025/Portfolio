@@ -13,6 +13,7 @@ interface MagneticButtonProps {
     variant?: 'primary' | 'secondary' | 'ghost';
     size?: 'sm' | 'md' | 'lg';
     external?: boolean;
+    disabled?: boolean;
 }
 
 export default function MagneticButton({
@@ -23,6 +24,7 @@ export default function MagneticButton({
     variant = 'primary',
     size = 'md',
     external = false,
+    disabled = false,
 }: MagneticButtonProps) {
     const ref = useRef<HTMLDivElement>(null);
     const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -66,11 +68,12 @@ export default function MagneticButton({
             className="inline-block"
         >
             <Component
-                href={href}
-                onClick={onClick}
-                className={baseStyles}
+                href={disabled ? undefined : href}
+                onClick={disabled ? undefined : onClick}
+                className={`${baseStyles} ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
                 target={external ? '_blank' : undefined}
                 rel={external ? 'noopener noreferrer' : undefined}
+                disabled={!href && disabled ? true : undefined}
             >
                 <motion.span
                     className="relative z-10 flex items-center gap-2"

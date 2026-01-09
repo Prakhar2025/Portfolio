@@ -1,9 +1,9 @@
-// Sticky animated navbar with scroll detection and theme toggle
+// Sticky animated navbar with scroll detection
 'use client';
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Container, ThemeToggle } from '@/components/ui';
+import { Container } from '@/components/ui';
 import { navAnimation } from '@/lib/animations';
 
 const navLinks = [
@@ -82,20 +82,10 @@ export default function Header() {
                             transition={{ delay: 0.1 * navLinks.length + 0.3 }}
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="ml-4 px-5 py-2 text-sm font-medium text-white dark:text-white bg-white/10 rounded-lg border border-white/10 hover:bg-white/15 hover:border-white/20 transition-all"
+                            className="ml-4 px-5 py-2 text-sm font-medium text-white bg-white/10 rounded-lg border border-white/10 hover:bg-white/15 hover:border-white/20 transition-all"
                         >
                             Resume
                         </motion.a>
-
-                        {/* Theme Toggle */}
-                        <motion.div
-                            initial={{ opacity: 0, y: -20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.1 * navLinks.length + 0.4 }}
-                            className="ml-2"
-                        >
-                            <ThemeToggle />
-                        </motion.div>
                     </div>
 
                     {/* Mobile Menu Button */}

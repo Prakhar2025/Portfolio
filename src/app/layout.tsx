@@ -1,9 +1,9 @@
-// Root layout with dark/light theme, smooth scroll, and custom cursor
+// Root layout with dark theme, smooth scroll, custom cursor, and UI enhancements
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { Header, Footer } from '@/components/layout';
-import { CustomCursor } from '@/components/ui';
+import { CustomCursor, ScrollProgress, BackToTop } from '@/components/ui';
 import { SmoothScroll, ThemeProvider, PageLoader } from '@/components/providers';
 
 const inter = Inter({
@@ -41,11 +41,13 @@ export default function RootLayout({
       <body className={`${inter.variable} font-sans antialiased`}>
         <ThemeProvider>
           <PageLoader />
+          <ScrollProgress />
           <SmoothScroll>
             <CustomCursor />
             <Header />
             <main>{children}</main>
             <Footer />
+            <BackToTop />
           </SmoothScroll>
         </ThemeProvider>
       </body>

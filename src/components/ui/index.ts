@@ -5,3 +5,5 @@ export { default as CustomCursor } from './CustomCursor';
 export { default as MagneticButton } from './MagneticButton';
 export { default as TiltCard } from './TiltCard';
 export { default as ThemeToggle } from './ThemeToggle';
+export { default as ScrollProgress } from './ScrollProgress';
+export { default as BackToTop } from './BackToTop';

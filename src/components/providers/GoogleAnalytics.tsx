@@ -3,21 +3,10 @@
 
 import Script from 'next/script';
 
-// TODO: Replace with your Google Analytics Measurement ID
-// Get it from https://analytics.google.com/
+// Your Google Analytics Measurement ID
 const GA_MEASUREMENT_ID = 'G-24B9Y42028';
 
 export default function GoogleAnalytics() {
-    // Don't load in development
-    if (process.env.NODE_ENV !== 'production') {
-        return null;
-    }
-
-    // Don't load if no measurement ID
-    if (!GA_MEASUREMENT_ID || GA_MEASUREMENT_ID === 'G-24B9Y42028') {
-        return null;
-    }
-
     return (
         <>
             <Script

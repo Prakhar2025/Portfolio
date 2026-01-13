@@ -11,8 +11,8 @@ const inter = Inter({
   variable: '--font-inter',
 });
 
-// Site URL - update this when deploying
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://prakharshukla.dev';
+// Site URL - your Vercel deployment URL
+const siteUrl = 'https://prakhar-dev-portfolio.vercel.app';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

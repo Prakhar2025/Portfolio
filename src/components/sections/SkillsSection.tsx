@@ -12,7 +12,7 @@ const skillCategories = [
     },
     {
         name: 'Web & Mobile Development',
-        skills: ['React', 'Next.js', 'Node.js', 'FastAPI', 'Flask', 'Streamlit', 'React Native (Expo)', 'HTML5', 'CSS3', 'REST APIs'],
+        skills: ['React', 'Next.js', 'Node.js', 'FastAPI', 'Flask', 'Pydantic', 'Streamlit', 'React Native (Expo)', 'HTML5', 'CSS3', 'REST APIs'],
     },
     {
         name: 'AI / Machine Learning',
@@ -20,7 +20,7 @@ const skillCategories = [
     },
     {
         name: 'Cloud, Databases & Tools',
-        skills: ['Vercel', 'Render', 'Firebase', 'PostgreSQL', 'MongoDB', 'Firebase Firestore', 'Git', 'GitHub'],
+        skills: ['Vercel', 'Render', 'Firebase', 'PostgreSQL', 'Supabase', 'MongoDB', 'Clerk Auth', 'Git', 'GitHub'],
     },
 ];
 

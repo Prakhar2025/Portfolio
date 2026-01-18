@@ -9,8 +9,8 @@ const projects = [
     {
         id: 1,
         title: 'EthAum AI — AI-Powered SaaS Marketplace',
-        description: 'AI-driven marketplace for Series A–D startups to accelerate enterprise adoption.',
-        tech: ['Next.js', 'TypeScript', 'Python', 'FastAPI', 'AI Scoring'],
+        description: 'Full-stack SaaS marketplace with AI credibility scoring, sentiment analysis, and smart recommendations. 50+ API endpoints with admin dashboard.',
+        tech: ['Next.js', 'TypeScript', 'Python', 'FastAPI', 'PostgreSQL', 'Supabase', 'Clerk', 'AI'],
         live: 'https://ethaumai.vercel.app',
         github: 'https://github.com/Prakhar2025/EthAum-Venture-Partners',
     },

@@ -26,6 +26,7 @@ const publications = [
         description: 'Comparative analysis of image and video-based deepfake detection techniques.',
         type: 'conference',
         links: {
+            certificate: '/research2.pdf',
             ieee: '#',
         },
     },

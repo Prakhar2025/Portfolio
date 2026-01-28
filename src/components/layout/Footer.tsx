@@ -8,6 +8,7 @@ import { fadeInUp, defaultViewport } from '@/lib/animations';
 const socialLinks = [
     { label: 'GitHub', href: 'https://github.com/Prakhar2025' },
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/prakhar-shukla-471649261' },
+    { label: 'LeetCode', href: 'https://leetcode.com/u/PrakharShukla2005/' },
 ];
 
 export default function Footer() {

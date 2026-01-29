@@ -95,8 +95,8 @@ export default function TimelineSection() {
                     className="max-w-4xl mx-auto"
                 >
                     <div className="relative">
-                        {/* Vertical line */}
-                        <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-violet-500/50 via-fuchsia-500/50 to-violet-500/50" />
+                        {/* Vertical line - stays behind */}
+                        <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-violet-500/50 via-fuchsia-500/50 to-violet-500/50 z-0" />
 
                         {timeline.map((item, index) => (
                             <motion.div
@@ -112,7 +112,7 @@ export default function TimelineSection() {
 
                                 {/* Content card */}
                                 <div className={`flex-1 ml-24 md:ml-0 ${index % 2 === 0 ? 'md:pr-16' : 'md:pl-16'}`}>
-                                    <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/[0.05] hover:border-white/[0.1] transition-colors group">
+                                    <div className="relative z-10 p-6 rounded-2xl bg-white/[0.02] border border-white/[0.05] hover:border-white/[0.1] transition-colors group">
                                         {/* Type badge */}
                                         <span className={`inline-flex px-3 py-1 text-xs font-medium rounded-full mb-3 border ${typeStyles[item.type as keyof typeof typeStyles]}`}>
                                             {item.type.charAt(0).toUpperCase() + item.type.slice(1)}

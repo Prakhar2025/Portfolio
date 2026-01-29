@@ -3,7 +3,7 @@
 
 import { motion, useInView } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
-import { Container, SectionHeading } from '@/components/ui';
+import { Container } from '@/components/ui';
 import { fadeInUp, staggerContainer, defaultViewport } from '@/lib/animations';
 
 const stats = [

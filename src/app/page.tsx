@@ -5,6 +5,8 @@ import {
   ExperienceSection,
   ResearchSection,
   SkillsSection,
+  StatsSection,
+  TimelineSection,
   AchievementsSection,
   AboutSection,
   ContactSection,
@@ -18,6 +20,8 @@ export default function Home() {
       <ExperienceSection />
       <ResearchSection />
       <SkillsSection />
+      <StatsSection />
+      <TimelineSection />
       <AchievementsSection />
       <AboutSection />
       <ContactSection />

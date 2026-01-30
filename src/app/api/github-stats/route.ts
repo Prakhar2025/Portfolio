@@ -9,6 +9,15 @@ interface GitHubStats {
     totalStars: number;
 }
 
+interface GitHubRepo {
+    name: string;
+    stargazers_count: number;
+}
+
+interface GitHubUser {
+    public_repos: number;
+}
+
 export async function GET() {
     try {
         const token = process.env.GITHUB_TOKEN;
@@ -30,7 +39,7 @@ export async function GET() {
             throw new Error('Failed to fetch user data');
         }
 
-        const userData = await userResponse.json();
+        const userData: GitHubUser = await userResponse.json();
 
         // Fetch repositories
         const reposResponse = await fetch(
@@ -45,11 +54,11 @@ export async function GET() {
             throw new Error('Failed to fetch repositories');
         }
 
-        const repos = await reposResponse.json();
+        const repos: GitHubRepo[] = await reposResponse.json();
 
         // Calculate total commits (approximate from all repos)
         let totalCommits = 0;
-        const commitPromises = repos.slice(0, 30).map(async (repo: any) => {
+        const commitPromises = repos.slice(0, 30).map(async (repo: GitHubRepo) => {
             try {
                 const commitsResponse = await fetch(
                     `https://api.github.com/repos/${GITHUB_USERNAME}/${repo.name}/commits?per_page=1`,
@@ -80,7 +89,7 @@ export async function GET() {
         totalCommits = commitCounts.reduce((sum, count) => sum + count, 0);
 
         // Calculate total stars
-        const totalStars = repos.reduce((sum: number, repo: any) => sum + repo.stargazers_count, 0);
+        const totalStars = repos.reduce((sum: number, repo: GitHubRepo) => sum + repo.stargazers_count, 0);
 
         const stats: GitHubStats = {
             totalCommits,

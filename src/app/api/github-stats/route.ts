@@ -1,4 +1,4 @@
-// API route to fetch GitHub stats
+// API route to fetch GitHub stats using GraphQL
 import { NextResponse } from 'next/server';
 
 const GITHUB_USERNAME = 'Prakhar2025';
@@ -9,91 +9,71 @@ interface GitHubStats {
     totalStars: number;
 }
 
-interface GitHubRepo {
-    name: string;
-    stargazers_count: number;
-}
-
-interface GitHubUser {
-    public_repos: number;
-}
-
 export async function GET() {
     try {
         const token = process.env.GITHUB_TOKEN;
-        const headers: HeadersInit = {
-            'Accept': 'application/vnd.github.v3+json',
-        };
 
-        if (token) {
-            headers['Authorization'] = `Bearer ${token}`;
+        // If no token (local dev), return fallback data
+        if (!token) {
+            console.warn('GitHub token not found, using fallback data');
+            return NextResponse.json({
+                totalCommits: 306,
+                totalRepos: 23,
+                totalStars: 1,
+            });
         }
 
-        // Fetch user data
-        const userResponse = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}`, {
-            headers,
+        // GraphQL query to get contribution stats
+        const graphqlQuery = {
+            query: `
+                query($username: String!) {
+                    user(login: $username) {
+                        contributionsCollection {
+                            contributionCalendar {
+                                totalContributions
+                            }
+                        }
+                        repositories(first: 100, ownerAffiliations: OWNER, privacy: PUBLIC) {
+                            totalCount
+                            nodes {
+                                stargazerCount
+                            }
+                        }
+                    }
+                }
+            `,
+            variables: {
+                username: GITHUB_USERNAME
+            }
+        };
+
+        // Fetch from GitHub GraphQL API
+        const response = await fetch('https://api.github.com/graphql', {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(graphqlQuery),
             next: { revalidate: 3600 } // Cache for 1 hour
         });
 
-        if (!userResponse.ok) {
-            throw new Error('Failed to fetch user data');
+        if (!response.ok) {
+            throw new Error('Failed to fetch GitHub stats');
         }
 
-        const userData: GitHubUser = await userResponse.json();
-
-        // Fetch repositories
-        const reposResponse = await fetch(
-            `https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100&type=all`,
-            {
-                headers,
-                next: { revalidate: 3600 }
-            }
-        );
-
-        if (!reposResponse.ok) {
-            throw new Error('Failed to fetch repositories');
-        }
-
-        const repos: GitHubRepo[] = await reposResponse.json();
-
-        // Calculate total commits (approximate from all repos)
-        let totalCommits = 0;
-        const commitPromises = repos.slice(0, 30).map(async (repo: GitHubRepo) => {
-            try {
-                const commitsResponse = await fetch(
-                    `https://api.github.com/repos/${GITHUB_USERNAME}/${repo.name}/commits?per_page=1`,
-                    {
-                        headers,
-                        next: { revalidate: 3600 }
-                    }
-                );
-
-                if (commitsResponse.ok) {
-                    const linkHeader = commitsResponse.headers.get('Link');
-                    if (linkHeader) {
-                        const match = linkHeader.match(/page=(\d+)>; rel="last"/);
-                        if (match) {
-                            return parseInt(match[1]);
-                        }
-                    }
-                    const commits = await commitsResponse.json();
-                    return commits.length;
-                }
-            } catch (error) {
-                console.error(`Error fetching commits for ${repo.name}:`, error);
-            }
-            return 0;
-        });
-
-        const commitCounts = await Promise.all(commitPromises);
-        totalCommits = commitCounts.reduce((sum, count) => sum + count, 0);
+        const data = await response.json();
+        const user = data.data.user;
 
         // Calculate total stars
-        const totalStars = repos.reduce((sum: number, repo: GitHubRepo) => sum + repo.stargazers_count, 0);
+        const totalStars = user.repositories.nodes.reduce(
+            (sum: number, repo: { stargazerCount: number }) => sum + repo.stargazerCount,
+            0
+        );
 
         const stats: GitHubStats = {
-            totalCommits,
-            totalRepos: userData.public_repos,
+            totalCommits: user.contributionsCollection.contributionCalendar.totalContributions,
+            totalRepos: user.repositories.totalCount,
             totalStars,
         };
 

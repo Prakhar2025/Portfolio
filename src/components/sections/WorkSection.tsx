@@ -16,6 +16,14 @@ const projects = [
     },
     {
         id: 2,
+        title: 'Canvas AI — AI-Powered Generative Workspace',
+        description: 'AI-native workspace that builds interfaces from natural language. Speak or type what you need, and the AI dynamically renders the right components — project boards, charts, timelines, and more.',
+        tech: ['Next.js', 'TypeScript', 'React', 'Tambo AI', 'Framer Motion', 'Tailwind CSS', 'MCP'],
+        live: 'https://canvas-ai-nu.vercel.app/',
+        github: 'https://github.com/Prakhar2025/canvas.ai',
+    },
+    {
+        id: 3,
         title: 'Truth Shield — Deepfake Detection System',
         description: 'AI-powered system for detecting manipulated images and videos.',
         tech: ['Python', 'TensorFlow', 'OpenCV', 'Flask', 'CNN-LSTM'],
@@ -23,7 +31,7 @@ const projects = [
         github: 'https://github.com/Prakhar2025/Truth-Shield',
     },
     {
-        id: 3,
+        id: 4,
         title: 'NLP Legal Compliance System',
         description: 'Automated contract analysis platform for legal risk and compliance detection.',
         tech: ['JavaScript', 'Node.js', 'NLP', 'React', 'REST APIs'],
@@ -31,7 +39,7 @@ const projects = [
         github: 'https://github.com/Prakhar2025/NLP-Legal-Compilance-System',
     },
     {
-        id: 4,
+        id: 5,
         title: 'LearnSphere — Secure Mobile Learning Platform',
         description: 'Cross-platform LMS featuring a custom chromeless video engine and scalable backend for premium content delivery.',
         tech: ['React Native', 'Expo', 'TypeScript', 'Node.js', 'Firebase', 'Redux'],

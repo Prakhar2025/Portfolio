@@ -9,6 +9,15 @@ import { fadeInUp, staggerContainer, defaultViewport } from '@/lib/animations';
 const achievements = [
     {
         id: 1,
+        title: 'Top 200 AI Teams (Top 2%)',
+        event: 'India AI Impact Buildathon 2026 — Grand Finale, Bharat Mandapam, New Delhi',
+        description: 'Selected among Top 200 AI teams from 40,000+ AI builders across India for the Grand Finale at the India AI Impact Summit 2026, Bharat Mandapam, New Delhi. Powered by HCL GUVI.',
+        image: '/images/achievements/hclguvi.jpeg',
+        link: 'https://www.linkedin.com/feed/update/urn:li:activity:7428490256519262209/',
+        linkType: 'linkedin',
+    },
+    {
+        id: 2,
         title: 'National Winner (Top 15)',
         event: 'SBI Youth Ideathon 2025, IIT Delhi',
         description: 'Selected among 15,000+ teams to present Truth Shield. Awarded ₹20,000 for AI innovation.',
@@ -17,7 +26,7 @@ const achievements = [
         linkType: 'linkedin',
     },
     {
-        id: 2,
+        id: 3,
         title: 'National Innovation Finalist',
         event: 'Azim Premji University & BITS Pilani Hyderabad',
         description: 'Finalist at Azim Premji University (Social Enterprise Challenge) and Top 20 at BITS Pilani Hyderabad (Beyond Profits) for AI-driven security innovation.',
@@ -26,7 +35,7 @@ const achievements = [
         linkType: 'linkedin',
     },
     {
-        id: 3,
+        id: 4,
         title: '1st Runner-Up',
         event: 'Hack Wack 2.0 (2025)',
         description: 'Secured 2nd rank among 300+ participants; won ₹8,000 for real-time deepfake detection.',
@@ -35,7 +44,7 @@ const achievements = [
         linkType: null,
     },
     {
-        id: 4,
+        id: 5,
         title: '1st Runner-Up',
         event: 'HackAIthon',
         description: 'Organized by Azure Developer Community & Reskilll for applied AI problem-solving.',

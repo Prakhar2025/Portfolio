@@ -8,6 +8,15 @@ import { fadeInUp, staggerContainer, defaultViewport } from '@/lib/animations';
 const projects = [
     {
         id: 1,
+        title: 'ScamShield — AI Scam Intelligence Platform',
+        description: 'Agentic AI honeypot that autonomously engages scammers using adaptive LLM personas, extracts intelligence (UPI IDs, bank details, phone numbers) with 98% accuracy, and serves real-time analytics across 13+ REST APIs.',
+        tech: ['Next.js 14', 'TypeScript', 'FastAPI', 'Python', 'MongoDB', 'GROQ AI', 'Vercel', 'Render'],
+        live: 'https://scamshield-honeypot.vercel.app/',
+        github: 'https://github.com/Prakhar2025',
+        api: 'https://scamshield-honeypot.onrender.com/docs',
+    },
+    {
+        id: 2,
         title: 'EthAum AI — AI-Powered SaaS Marketplace',
         description: 'Full-stack SaaS marketplace with AI credibility scoring, sentiment analysis, and smart recommendations. 50+ API endpoints with admin dashboard.',
         tech: ['Next.js', 'TypeScript', 'Python', 'FastAPI', 'PostgreSQL', 'Supabase', 'Clerk', 'AI'],
@@ -15,7 +24,7 @@ const projects = [
         github: 'https://github.com/Prakhar2025/EthAum-Venture-Partners',
     },
     {
-        id: 2,
+        id: 3,
         title: 'Canvas AI — AI-Powered Generative Workspace',
         description: 'AI-native workspace that builds interfaces from natural language. Speak or type what you need, and the AI dynamically renders the right components — project boards, charts, timelines, and more.',
         tech: ['Next.js', 'TypeScript', 'React', 'Tambo AI', 'Framer Motion', 'Tailwind CSS', 'MCP'],
@@ -23,7 +32,7 @@ const projects = [
         github: 'https://github.com/Prakhar2025/canvas.ai',
     },
     {
-        id: 3,
+        id: 4,
         title: 'Truth Shield — Deepfake Detection System',
         description: 'AI-powered system for detecting manipulated images and videos.',
         tech: ['Python', 'TensorFlow', 'OpenCV', 'Flask', 'CNN-LSTM'],
@@ -31,7 +40,7 @@ const projects = [
         github: 'https://github.com/Prakhar2025/Truth-Shield',
     },
     {
-        id: 4,
+        id: 5,
         title: 'NLP Legal Compliance System',
         description: 'Automated contract analysis platform for legal risk and compliance detection.',
         tech: ['JavaScript', 'Node.js', 'NLP', 'React', 'REST APIs'],
@@ -39,7 +48,7 @@ const projects = [
         github: 'https://github.com/Prakhar2025/NLP-Legal-Compilance-System',
     },
     {
-        id: 5,
+        id: 6,
         title: 'LearnSphere — Secure Mobile Learning Platform',
         description: 'Cross-platform LMS featuring a custom chromeless video engine and scalable backend for premium content delivery.',
         tech: ['React Native', 'Expo', 'TypeScript', 'Node.js', 'Firebase', 'Redux'],
@@ -114,6 +123,21 @@ export default function WorkSection() {
                                                     Live
                                                     <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                                    </svg>
+                                                </span>
+                                            </MagneticButton>
+                                        )}
+                                        {'api' in project && project.api && (
+                                            <MagneticButton
+                                                href={project.api}
+                                                variant="secondary"
+                                                size="sm"
+                                                external
+                                            >
+                                                <span className="flex items-center gap-2">
+                                                    API Docs
+                                                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                                                     </svg>
                                                 </span>
                                             </MagneticButton>

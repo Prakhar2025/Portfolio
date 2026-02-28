@@ -66,7 +66,7 @@ export default function StatsSection() {
         {
             id: 1,
             label: 'Years Experience',
-            value: 2,
+            value: 1,
             suffix: '+',
             description: 'Building innovative solutions',
         },

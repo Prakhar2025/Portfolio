@@ -8,6 +8,18 @@ import { fadeInUp, staggerContainer, defaultViewport } from '@/lib/animations';
 const publications = [
     {
         id: 1,
+        title: 'Comprehensive Deepfake Detection: A Comparative Study on Image and Video Forgery',
+        venue: '8th IEEE Pune Section International Conference (PUNECON 2025)',
+        year: '2025',
+        description: 'Comparative analysis of image and video-based deepfake detection techniques.',
+        type: 'conference',
+        links: {
+            certificate: '/research2.pdf',
+            ieee: 'https://ieeexplore.ieee.org/document/11379757',
+        },
+    },
+    {
+        id: 2,
         title: 'Advanced Deepfake Image Detection: A Robust Framework using InceptionV3 and Xception',
         venue: 'i-manager\'s Journal on Image Processing',
         year: '2025',
@@ -16,18 +28,6 @@ const publications = [
         links: {
             paper: 'https://imanagerpublications.com/article/22384/',
             certificate: '/research1.pdf',
-        },
-    },
-    {
-        id: 2,
-        title: 'Comprehensive Deepfake Detection: A Comparative Study on Image and Video Forgery',
-        venue: '8th IEEE Pune Section International Conference (PUNECON 2025)',
-        year: '2025',
-        description: 'Comparative analysis of image and video-based deepfake detection techniques.',
-        type: 'conference',
-        links: {
-            certificate: '/research2.pdf',
-            ieee: '#',
         },
     },
 ];

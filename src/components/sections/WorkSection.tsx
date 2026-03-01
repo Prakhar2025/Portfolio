@@ -22,6 +22,7 @@ const projects = [
         tech: ['Next.js', 'TypeScript', 'Python', 'FastAPI', 'PostgreSQL', 'Supabase', 'Clerk', 'AI'],
         live: 'https://ethaumai.vercel.app',
         github: 'https://github.com/Prakhar2025/EthAum-Venture-Partners',
+        api: 'https://ethaum-venture-partners.onrender.com/docs',
     },
     {
         id: 3,

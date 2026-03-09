@@ -10,6 +10,7 @@ const socialLinks = [
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/prakhar-shukla-471649261' },
     { label: 'LeetCode', href: 'https://leetcode.com/u/PrakharShukla2005/' },
     { label: 'Twitter', href: 'https://x.com/prakhar_builds' },
+    { label: 'Dev.to', href: 'https://dev.to/coldstartdev' },
 ];
 
 export default function Footer() {

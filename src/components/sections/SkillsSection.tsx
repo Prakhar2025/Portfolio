@@ -8,19 +8,19 @@ import { fadeInUp, staggerContainer, staggerFast, defaultViewport } from '@/lib/
 const skillCategories = [
     {
         name: 'Languages',
-        skills: ['C++', 'JavaScript', 'Python', 'SQL', 'TypeScript'],
+        skills: ['C++', 'JavaScript (ES6+)', 'TypeScript', 'Python', 'SQL'],
     },
     {
         name: 'Web & Mobile Development',
-        skills: ['React', 'Next.js', 'Node.js', 'FastAPI', 'Flask', 'Pydantic', 'Streamlit', 'React Native (Expo)', 'HTML5', 'CSS3', 'REST APIs'],
+        skills: ['React.js', 'Next.js', 'Node.js', 'Express.js', 'FastAPI', 'Flask', 'Tailwind CSS', 'Redux Toolkit', 'Framer Motion', 'React Native (Expo)', 'REST APIs', 'OpenAPI / Swagger', 'JWT Auth'],
     },
     {
-        name: 'AI / Machine Learning',
-        skills: ['Deep Learning (CNN, LSTM)', 'Computer Vision', 'NLP (Text Classification)', 'TensorFlow', 'PyTorch', 'OpenCV'],
+        name: 'AI & GenAI',
+        skills: ['LLM Workflows', 'Prompt Engineering', 'Agentic AI', 'RAG', 'Embeddings', 'Amazon Bedrock', 'GROQ AI', 'AI Tool Orchestration', 'NLP', 'Computer Vision', 'TensorFlow', 'OpenCV'],
     },
     {
-        name: 'Cloud, Databases & Tools',
-        skills: ['Vercel', 'Render', 'Firebase', 'PostgreSQL', 'Supabase', 'MongoDB', 'Clerk Auth', 'Git', 'GitHub'],
+        name: 'Cloud, Databases & DevOps',
+        skills: ['AWS Lambda', 'API Gateway', 'DynamoDB', 'Amazon Bedrock', 'AWS SAM', 'CloudFormation', 'Vercel', 'Render', 'Firebase', 'PostgreSQL', 'MongoDB', 'Supabase', 'Clerk Auth', 'Git', 'GitHub', 'CI/CD'],
     },
 ];
 

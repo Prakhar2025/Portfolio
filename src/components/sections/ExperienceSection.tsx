@@ -19,7 +19,7 @@ const experiences = [
         id: 2,
         role: 'React Native Intern',
         company: 'Anishree Technologies LLP',
-        period: 'Dec 2025 – Present',
+        period: 'Dec 2025 – March 2026',
         description: 'Building a production-grade React Native mobile application with secure authentication and real client requirements.',
         link: '#',
         linkLabel: 'View App',

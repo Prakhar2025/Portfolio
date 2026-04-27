@@ -72,14 +72,16 @@ export default function AboutSection() {
                         viewport={defaultViewport}
                         className="space-y-6"
                     >
-                        <p className="text-lg text-white/70 leading-relaxed">
-                            I&apos;m a software engineer focused on building real-world systems across full-stack development and applied AI. I enjoy working end-to-end — from designing clean interfaces and APIs to implementing machine learning models that solve practical problems.
+                        <p className="text-lg text-white/70 leading-relaxed text-justify hyphens-auto">
+                            I&apos;m a software engineer specialising in full-stack engineering and applied AI systems — architecting React/Next.js frontends, FastAPI/Node.js backends, and serverless cloud infrastructure that ships to production at real scale.
                         </p>
-                        <p className="text-lg text-white/70 leading-relaxed">
-                            My work spans AI-powered SaaS platforms, deepfake detection systems, NLP applications, and mobile apps, with an emphasis on production-ready code and thoughtful architecture.
+                        <p className="text-lg text-white/70 leading-relaxed text-justify hyphens-auto">
+                            My recent work sits at the intersection of AI and systems engineering. I engineered a serverless AI hallucination firewall on Amazon Bedrock recognised as a{' '}
+                            <span className="text-violet-400 font-medium">Global Top 50 Finalist by AWS</span>, and an agentic scam-intelligence platform selected as{' '}
+                            <span className="text-violet-400 font-medium">Top 200 nationwide</span>{' '}from 40,000+ AI builders across India.
                         </p>
-                        <p className="text-lg text-white/70 leading-relaxed">
-                            Shipped multiple production-ready web, AI, and mobile systems. Currently, I&apos;m building and learning by shipping projects, contributing to client work, and continuously improving my engineering depth across software and AI.
+                        <p className="text-lg text-white/70 leading-relaxed text-justify hyphens-auto">
+                            Currently in my final year of B.Tech CSE (CGPA&nbsp;8.79), shipping production systems and deepening my expertise in LLM orchestration, serverless AWS architecture, and scalable API design.
                         </p>
 
                         {/* Stats */}
@@ -87,7 +89,7 @@ export default function AboutSection() {
                             {[
                                 { value: '1+', label: 'Years Experience' },
                                 { value: '10+', label: 'Projects Built' },
-                                { value: '4', label: 'Live Deployments' },
+                                { value: '8+', label: 'Live Deployments' },
                             ].map((stat) => (
                                 <div key={stat.label}>
                                     <div className="text-2xl font-bold text-white">{stat.value}</div>

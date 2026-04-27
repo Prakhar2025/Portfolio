@@ -28,14 +28,22 @@ const timeline = [
     },
     {
         id: 3,
-        year: '2024',
-        title: 'National Project Presentations',
-        organization: 'BITS Pilani & Azim Premji University',
-        description: 'Presented Deepfake Detection project at national-level competitions',
+        year: '2025',
+        title: 'National Innovation Finalist',
+        organization: 'BITS Pilani Hyderabad & Azim Premji University',
+        description: 'Top 20 at BITS Pilani (Beyond Profits) and finalist at Azim Premji University Social Enterprise Challenge for AI-driven deepfake security.',
         type: 'achievement',
     },
     {
         id: 4,
+        year: '2025',
+        title: 'React Native App Development Intern',
+        organization: 'Anishree Technologies · Dec 2025 – Mar 2026',
+        description: 'Built cross-platform mobile apps with REST API and Firebase integration. Designed reusable UI components improving feature delivery efficiency by ~30%.',
+        type: 'work',
+    },
+    {
+        id: 5,
         year: '2025',
         title: 'IIT Delhi Innovation Challenge — Winner',
         organization: 'SBI Youth Ideathon 2025 · Top 15 Finalist',
@@ -43,7 +51,7 @@ const timeline = [
         type: 'achievement',
     },
     {
-        id: 5,
+        id: 6,
         year: '2025',
         title: 'First Research Paper Published',
         organization: 'i-manager\'s Journal on Image Processing',
@@ -51,7 +59,7 @@ const timeline = [
         type: 'research',
     },
     {
-        id: 6,
+        id: 7,
         year: '2025',
         title: 'IEEE Conference Paper',
         organization: 'PUNECON 2025',
@@ -59,7 +67,7 @@ const timeline = [
         type: 'research',
     },
     {
-        id: 7,
+        id: 8,
         year: '2026',
         title: 'AWS AIdeas Global Top 50 Finalist',
         organization: 'Amazon Web Services — 10,000+ Global Submissions',

@@ -36,10 +36,10 @@ const timeline = [
     },
     {
         id: 4,
-        year: '2024',
-        title: 'IIT Delhi Innovation Challenge - Winner',
-        organization: 'Top 15 Finalist',
-        description: 'Won ₹20,000 prize money for Deepfake Detection project',
+        year: '2025',
+        title: 'IIT Delhi Innovation Challenge — Winner',
+        organization: 'SBI Youth Ideathon 2025 · Top 15 Finalist',
+        description: 'Won ₹20,000 prize among 15,000+ teams for Truth Shield AI innovation at IIT Delhi.',
         type: 'achievement',
     },
     {
@@ -57,6 +57,18 @@ const timeline = [
         organization: 'PUNECON 2025',
         description: 'Comprehensive Deepfake Detection: Comparative Study',
         type: 'research',
+    },
+    {
+        id: 7,
+        year: '2026',
+        title: 'AWS AIdeas Global Top 50 Finalist',
+        organization: 'Amazon Web Services — 10,000+ Global Submissions',
+        description: 'Selected as Top 50 Finalist worldwide for TruthLayer — a serverless AI hallucination firewall built on Amazon Bedrock. Featured in official AWS Builder publication.',
+        type: 'achievement',
+        link: {
+            label: 'View AWS Publication',
+            href: 'https://builder.aws.com/content/3AiVAgV9sh4C2Si39FRcUVmT5H4/aideas-finalist-truthlayer-the-five-signal-ai-verification-engine',
+        },
     },
 ];
 

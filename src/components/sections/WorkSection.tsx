@@ -26,9 +26,9 @@ const projects = [
     },
     {
         id: 3,
-        title: 'EthAum AI — AI-Powered SaaS Marketplace',
-        description: 'Full-stack SaaS marketplace with AI credibility scoring, sentiment analysis, and smart recommendations. 50+ API endpoints with admin dashboard.',
-        tech: ['Next.js', 'TypeScript', 'Python', 'FastAPI', 'PostgreSQL', 'Supabase', 'Clerk', 'AI'],
+        title: 'EthAum AI — AI-Powered B2B SaaS Marketplace',
+        description: 'Full-stack enterprise marketplace connecting startups, corporate buyers, and VCs. Features AI credibility scoring, sentiment analysis, an innovation challenge board, and Stripe-integrated tiered subscriptions across a scalable 50+ endpoint multi-role architecture.',
+        tech: ['Next.js', 'TypeScript', 'Python', 'FastAPI', 'PostgreSQL', 'Supabase', 'Clerk', 'Stripe', 'AI'],
         live: 'https://ethaumai.vercel.app',
         github: 'https://github.com/Prakhar2025/EthAum-Venture-Partners',
         api: 'https://ethaum-venture-partners.onrender.com/docs',

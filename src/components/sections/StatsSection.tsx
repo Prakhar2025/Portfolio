@@ -1,9 +1,8 @@
 // Stats section — horizontal scrolling marquee ticker with live GitHub data
 'use client';
 
-import { motion, useInView } from 'framer-motion';
+import { useInView } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
-import { Container } from '@/components/ui';
 
 interface GitHubStats {
     totalCommits: number;

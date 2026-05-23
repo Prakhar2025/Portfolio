@@ -1,10 +1,9 @@
-// Stats section with animated counters and live GitHub data
+// Stats section — horizontal scrolling marquee ticker with live GitHub data
 'use client';
 
 import { motion, useInView } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
 import { Container } from '@/components/ui';
-import { fadeInUp, staggerContainer, defaultViewport } from '@/lib/animations';
 
 interface GitHubStats {
     totalCommits: number;
@@ -19,30 +18,19 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
 
     useEffect(() => {
         if (!isInView) return;
-
-        let start = 0;
         const end = value;
-        const duration = 2000;
+        const duration = 1800;
         const increment = end / (duration / 16);
-
+        let start = 0;
         const timer = setInterval(() => {
             start += increment;
-            if (start >= end) {
-                setCount(end);
-                clearInterval(timer);
-            } else {
-                setCount(Math.floor(start));
-            }
+            if (start >= end) { setCount(end); clearInterval(timer); }
+            else setCount(Math.floor(start));
         }, 16);
-
         return () => clearInterval(timer);
     }, [isInView, value]);
 
-    return (
-        <span ref={ref} className="tabular-nums">
-            {count}{suffix}
-        </span>
-    );
+    return <span ref={ref} className="tabular-nums">{count}{suffix}</span>;
 }
 
 export default function StatsSection() {
@@ -52,79 +40,62 @@ export default function StatsSection() {
     useEffect(() => {
         fetch('/api/github-stats')
             .then(res => res.json())
-            .then(data => {
-                setGithubStats(data);
-                setLoading(false);
-            })
-            .catch(error => {
-                console.error('Error fetching GitHub stats:', error);
-                setLoading(false);
-            });
+            .then(data => { setGithubStats(data); setLoading(false); })
+            .catch(() => setLoading(false));
     }, []);
 
     const stats = [
-        {
-            id: 1,
-            label: 'Years Experience',
-            value: 1,
-            suffix: '+',
-            description: 'Building innovative solutions',
-        },
-        {
-            id: 2,
-            label: 'Projects Completed',
-            value: 15,
-            suffix: '+',
-            description: 'Across web, mobile & AI',
-        },
-        {
-            id: 3,
-            label: 'GitHub Commits',
-            value: githubStats?.totalCommits || 306,
-            suffix: '',
-            description: 'Total contributions',
-        },
-        {
-            id: 4,
-            label: 'Research Papers',
-            value: 2,
-            suffix: '',
-            description: 'Published & presented',
-        },
+        { icon: '⚡', label: 'Years Building', value: 1, suffix: '+' },
+        { icon: '🚀', label: 'Projects Shipped', value: 10, suffix: '+' },
+        { icon: '📡', label: 'GitHub Commits', value: githubStats?.totalCommits || 306, suffix: '' },
+        { icon: '🔬', label: 'Research Papers', value: 2, suffix: '' },
+        { icon: '🏆', label: 'Hackathon Awards', value: 5, suffix: '+' },
+        { icon: '🌐', label: 'Live Deployments', value: 8, suffix: '+' },
     ];
 
-    return (
-        <section className="py-20 relative">
-            {/* Background gradient */}
-            <div className="absolute inset-0 bg-gradient-to-b from-violet-950/10 via-transparent to-transparent pointer-events-none" />
+    // Duplicate for seamless loop
+    const ticker = [...stats, ...stats];
 
-            <Container>
-                <motion.div
-                    variants={staggerContainer}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={defaultViewport}
-                    className="grid grid-cols-2 md:grid-cols-4 gap-8"
-                >
-                    {stats.map((stat) => (
-                        <motion.div
-                            key={stat.id}
-                            variants={fadeInUp}
-                            className="text-center p-6 rounded-2xl bg-white/[0.02] border border-white/[0.05] hover:border-white/[0.1] transition-colors"
+    return (
+        <section className="relative py-12 overflow-hidden">
+            {/* Top / bottom lines */}
+            <div className="section-divider mb-0" />
+
+            {/* Background glow */}
+            <div
+                className="absolute inset-0 pointer-events-none"
+                style={{ background: 'radial-gradient(ellipse 80% 60% at 50% 50%, rgba(124,58,237,0.04), transparent)' }}
+            />
+
+            {/* Marquee strip */}
+            <div className="relative overflow-hidden" style={{ maskImage: 'linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%)' }}>
+                <div className="flex items-center animate-marquee whitespace-nowrap gap-0">
+                    {ticker.map((stat, i) => (
+                        <div
+                            key={i}
+                            className="flex items-center gap-6 px-10"
                         >
-                            <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent mb-2">
-                                {loading && stat.id === 3 ? (
-                                    <span className="animate-pulse">...</span>
-                                ) : (
-                                    <Counter value={stat.value} suffix={stat.suffix} />
-                                )}
+                            {/* Stat */}
+                            <div className="flex items-center gap-3">
+                                <span className="text-2xl">{stat.icon}</span>
+                                <div>
+                                    <div className="text-2xl font-black text-gradient-violet tabular-nums">
+                                        {loading && stat.label === 'GitHub Commits'
+                                            ? <span className="animate-pulse text-white/20">···</span>
+                                            : <Counter value={stat.value} suffix={stat.suffix} />
+                                        }
+                                    </div>
+                                    <div className="text-xs text-white/30 font-medium mono">{stat.label}</div>
+                                </div>
                             </div>
-                            <div className="text-white font-medium mb-1">{stat.label}</div>
-                            <div className="text-sm text-white/40">{stat.description}</div>
-                        </motion.div>
+                            {/* Separator */}
+                            <div className="w-px h-8 bg-white/10" />
+                        </div>
                     ))}
-                </motion.div>
-            </Container>
+                </div>
+            </div>
+
+            <div className="section-divider mt-0" />
         </section>
     );
 }

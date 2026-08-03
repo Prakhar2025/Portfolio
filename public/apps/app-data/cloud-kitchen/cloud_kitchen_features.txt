@@ -1,0 +1,47 @@
+======================================================
+     CLOUD KITCHEN - END-TO-END FEATURE LIST
+======================================================
+
+1. CUSTOMER MOBILE APP (React Native / Expo)
+------------------------------------------------------
+- Guest Mode: Users can browse the entire food menu without needing to create an account.
+- Authentication: Secure User Registration, Login, and Logout.
+- Password Recovery: "Forgot Password" system that sends a secure reset link to the user's email.
+- Interactive Home Screen: Browse menus with an auto-scrolling festival banners carousel.
+- Dietary Filters: One-tap Veg / Non-Veg toggle buttons to filter the menu instantly.
+- Category Browsing: Browse food by categories (e.g., Pizza, Burgers, Desserts).
+- Search: Real-time search functionality to find specific food items.
+- Food Details: Interactive modals showing high-quality photos, descriptions, and user ratings.
+- Advanced Cart Management: Add items, increase/decrease quantities, or remove items from the cart.
+- Checkout System: Secure checkout process utilizing saved user addresses.
+- Order Placement: Supports Cash on Delivery (COD) functionality.
+- Live Order Tracking: Comprehensive order history screen with live status updates (Pending, Cooking, Out for Delivery).
+- Order Cancellation: Users can cancel their pending orders before food preparation begins.
+- Rating System: Users can rate specific food items after their order is successfully delivered.
+- Invoicing: Digital invoice and receipt generation for every completed order.
+- Address Management: Save, edit, and delete multiple delivery addresses (Home, Work, etc.).
+- Profile Management: Update personal information (Name, Phone Number).
+- Notifications: Receive real-time push notifications regarding order updates.
+
+
+2. DELIVERY PARTNER APP (React Native / Expo)
+------------------------------------------------------
+- Secure Delivery Login: Separate role-based access for delivery personnel.
+- Delivery Dashboard: A dedicated UI showing newly assigned orders ready for pickup.
+- Live Status Updating: Delivery boys can update the order status in real-time (Picked up -> On the way -> Delivered).
+- Delivery History: Track past completed deliveries.
+- Location Tracking: Backend endpoints designed to update the delivery boy's live geographical location.
+
+
+3. ADMIN WEB PANEL (Laravel Backend)
+------------------------------------------------------
+- Secure Admin Portal: Web-based login specifically for restaurant administrators.
+- Dashboard Analytics: Standard administrative dashboard showing order metrics.
+- Order Management: View all incoming orders, assign them to delivery partners, and track revenue.
+- Menu Management: Full CRUD (Create, Read, Update, Delete) controls over Food Categories and individual Food Items.
+- Banner Management: Upload and schedule promotional "Festival Banners" that appear on the mobile app.
+- Delivery Approvals: Manually approve or reject delivery partner registration requests.
+- Reporting: Generate and download Weekly, Monthly, and Yearly sales reports as PDFs.
+
+======================================================
+* This system is fully integrated, meaning actions taken on the Mobile App instantly reflect on the Laravel Admin Panel, and vice versa.

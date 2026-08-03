@@ -7,6 +7,14 @@ import { fadeInUp, staggerContainer, defaultViewport } from '@/lib/animations';
 
 const projects = [
     {
+        id: 0,
+        title: 'Mobile Applications Portfolio — Kraftor App, Ustad & Cloud Kitchen',
+        description: 'Suite of production-grade mobile applications built with React Native, Expo, Firebase, Node.js, and PHP Laravel. Features real-time CRM dashboards, Razorpay course selling, Cash on Delivery food ordering, live driver tracking, and instant APK downloads.',
+        tech: ['React Native', 'Expo', 'Firebase', 'Razorpay', 'PHP Laravel', 'Redux', 'Node.js'],
+        live: '/apps',
+        github: 'https://github.com/Prakhar2025',
+    },
+    {
         id: 1,
         title: 'PRism — AI Pull Request Intelligence Platform',
         description: 'Built for the IBM Bob Hackathon 2026. Agentic AI pull request analysis engine that makes code reviews self-explaining and risk-scored. Autonomously computes mathematical Attention Scores (AS) using AST pattern analysis and OSV CVE lookups across 4 risk dimensions (Security, Blast Radius, Dependency, Architectural). Leverages full repository context to capture and store architectural decision memory permanently.',
@@ -66,14 +74,6 @@ const projects = [
         tech: ['JavaScript', 'Node.js', 'NLP', 'React', 'REST APIs'],
         live: 'https://legal-compliance-monitor.netlify.app/',
         github: 'https://github.com/Prakhar2025/NLP-Legal-Compilance-System',
-    },
-    {
-        id: 8,
-        title: 'LearnSphere — Secure Mobile Learning Platform',
-        description: 'Cross-platform LMS featuring a custom chromeless video engine and scalable backend for premium content delivery.',
-        tech: ['React Native', 'Expo', 'TypeScript', 'Node.js', 'Firebase', 'Redux'],
-        live: '',
-        github: 'https://github.com/Prakhar2025/course',
     },
 ];
 

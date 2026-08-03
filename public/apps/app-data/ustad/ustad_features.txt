@@ -1,0 +1,27 @@
+# Ustad App (Course Selling Mobile App) Made for Tassawar Khan Academy- End-to-End Features
+
+## 1. User Features (Student Portal)
+- **Authentication:** Register and Login securely using Firebase Authentication.
+- **Course Catalog:** Browse a comprehensive list of all available and published courses.
+- **Course Enrollment:** Purchase and enroll in courses securely using Razorpay payment gateway integration.
+- **Free Previews:** Watch designated "Free Preview" lessons before deciding to purchase a course.
+- **Video Learning:** Watch course lessons directly in the app using a YouTube-embedded video player.
+- **Study Notes:** Access, view, and download PDF/Document study notes attached to specific lessons.
+- **Dashboard:** Personalized dashboard displaying all purchased and currently enrolled courses.
+- **Profile Management:** View and update personal profile information (including stats like Certificates earned).
+- **Customer Support:** Raise and track support tickets directly from the app for any issues.
+
+## 2. Admin Features (Management Portal)
+- **Admin Authentication:** Dedicated secure login for administrators.
+- **Analytics Dashboard:** View high-level statistics and overview of app usage, users, and courses.
+- **Course Management:** Complete control to create new courses, edit existing course details, and delete courses.
+- **Lesson Management:** Add, update, or remove lessons within courses (including video URLs, durations, free preview toggles, and study notes links).
+- **User Management:** View all registered users, see specific user details, update user statuses, or delete users.
+- **Payment Approvals:** Dedicated screen to review and manually approve or reject manual payment requests.
+- **Support Ticket Resolution:** View all submitted support tickets, communicate with users, and update ticket statuses to resolved.
+
+## 3. Core Technical Features
+- **Cross-Platform Mobile App:** Built with React Native & Expo for smooth performance on Android.
+- **Secure Backend:** Node.js + Express.js backend API hosted on a VPS.
+- **Cloud Database:** Real-time data storage and syncing using Firebase Firestore.
+- **State Management:** Efficient data handling using Redux Toolkit.

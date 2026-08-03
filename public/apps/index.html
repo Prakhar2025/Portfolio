@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apps Showcase — Mobile & Web Applications by Prakhar</title>
+  <meta name="description" content="Discover mobile and web applications built by Prakhar including Kraftor App, Ustad, Cloud Kitchen, and Work on 9. Explore features, mockups, and download APKs.">
+  
+  <!-- SEO Meta Tags -->
+  <meta property="og:title" content="Apps Showcase — Mobile & Web Portfolio by Prakhar">
+  <meta property="og:description" content="Explore mobile and web applications created by Prakhar.">
+  <meta property="og:type" content="website">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Material Symbols for Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+
+  <!-- Core CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="light">
+  
+  <!-- Background Ambient Glows -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  
+  <!-- Outer Wrap -->
+  <div class="app-container">
+    
+    <!-- Top Navigation Header -->
+    <header class="main-header" id="mainHeader">
+      <div class="header-logo-section">
+        <div class="header-titles">
+          <h1>Apps Showcase</h1>
+          <span class="site-tagline">Mobile & Web Apps by Prakhar</span>
+        </div>
+      </div>
+      
+      <!-- Search Input Container -->
+      <div class="search-bar-container">
+        <span class="material-symbols-rounded search-icon">search</span>
+        <input type="text" id="appSearch" placeholder="Search apps, features, categories..." aria-label="Search apps">
+        <button id="clearSearch" class="clear-search-btn" style="display: none;" aria-label="Clear search">
+          <span class="material-symbols-rounded">close</span>
+        </button>
+      </div>
+
+      <!-- Mode & Nav Controls -->
+      <div class="header-controls">
+        <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme">
+          <span class="material-symbols-rounded theme-icon-dark">dark_mode</span>
+          <span class="material-symbols-rounded theme-icon-light" style="display: none;">light_mode</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Dynamic Workspace -->
+    <main class="main-content">
+      
+      <!-- Pills Filter Bar -->
+      <section class="filter-section" aria-label="Category filter">
+        <div class="filter-pills-scroll" id="categoryFilters">
+          <button class="filter-pill active" data-category="all">
+            <span class="material-symbols-rounded">apps</span>
+            All Apps
+          </button>
+          <button class="filter-pill" data-category="business">
+            <span class="material-symbols-rounded">business_center</span>
+            Business & Utility
+          </button>
+          <button class="filter-pill" data-category="food">
+            <span class="material-symbols-rounded">restaurant</span>
+            Food & Drink
+          </button>
+          <button class="filter-pill" data-category="education">
+            <span class="material-symbols-rounded">school</span>
+            Education
+          </button>
+        </div>
+      </section>
+
+      <!-- Featured App Hero Banner -->
+      <section class="hero-showcase" id="heroShowcase">
+        <!-- Will be populated dynamically by JavaScript -->
+        <div class="hero-loading">
+          <div class="spinner"></div>
+        </div>
+      </section>
+
+      <!-- App Grid List Section -->
+      <section class="app-grid-section">
+        <div class="section-header">
+          <h2 class="section-title">Explore Applications</h2>
+          <span class="apps-count" id="appsCount">4 Apps Available</span>
+        </div>
+        
+        <div class="app-grid" id="appGrid">
+          <!-- Will be populated dynamically by JavaScript -->
+          <div class="grid-loading">
+            <div class="spinner"></div>
+          </div>
+        </div>
+
+        <div class="no-results" id="noResults" style="display: none;">
+          <span class="material-symbols-rounded no-results-icon">search_off</span>
+          <h3>No applications found</h3>
+          <p>Try refining your search query or switching categories.</p>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer Information -->
+    <footer class="main-footer">
+      <div class="footer-divider"></div>
+      <div class="footer-bottom-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <svg viewBox="0 0 100 100" width="24" height="24">
+              <path d="M20,15 L50,45 L80,15 C85,25 85,75 80,85 L50,55 L20,85 C15,75 15,25 20,15 Z" fill="url(#kraftorGrad)" />
+            </svg>
+            <span>Kraftor</span>
+          </div>
+          <p>Designing digital environments that inspire, connect, and elevate user experience.</p>
+        </div>
+        
+        <div class="footer-domain-badge">
+          <span class="domain-label">Official Portfolio</span>
+          <a href="https://apps.kraftor.in" class="domain-link">apps.kraftor.in</a>
+        </div>
+      </div>
+      <p class="copyright-text">&copy; 2026 Kraftor. All rights reserved.</p>
+    </footer>
+
+  </div>
+
+  <!-- App Detail Sliding Modal / Drawer Overlay -->
+  <div class="modal-overlay" id="appModal" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="modalClose" aria-label="Close details">
+        <span class="material-symbols-rounded">close</span>
+      </button>
+      
+      <!-- Modal Content Body -->
+      <div class="modal-content" id="modalContent">
+        <!-- Will be dynamically populated by JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>

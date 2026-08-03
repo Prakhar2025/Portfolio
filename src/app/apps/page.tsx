@@ -1,11 +1,11 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 
-export interface MobileApp {
+interface MobileApp {
   id: string;
   name: string;
   tagline: string;
@@ -29,7 +29,7 @@ export interface MobileApp {
   specs: Record<string, string>;
 }
 
-export const APPS_DATA: MobileApp[] = [
+const APPS_DATA: MobileApp[] = [
   {
     id: "kraftorapp",
     name: "Kraftor App",

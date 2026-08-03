@@ -414,35 +414,59 @@ export default function AppsPage() {
 
               {/* Tab 1: Screenshots */}
               {activeTab === 'screenshots' && (
-                <div className="space-y-4">
-                  {/* Main Displayed Screenshot */}
-                  <div className="relative aspect-[9/16] max-h-[480px] mx-auto rounded-3xl overflow-hidden border border-white/20 bg-neutral-950 shadow-2xl flex items-center justify-center">
-                    <img
-                      src={selectedApp.screenshots[activeScreenshot]}
-                      alt={`${selectedApp.name} screenshot ${activeScreenshot + 1}`}
-                      className="h-full w-auto object-contain"
-                    />
+                <div className="space-y-6">
+                  {/* Featured Mobile Phone Device Frame */}
+                  <div className="relative mx-auto w-[230px] sm:w-[250px] h-[470px] sm:h-[510px] bg-black border-[9px] border-slate-800 rounded-[38px] shadow-[0_25px_60px_rgba(0,0,0,0.8)] overflow-hidden ring-1 ring-white/20 flex flex-col items-center">
+                    {/* Dynamic Island / Camera Notch */}
+                    <div className="absolute top-2 w-20 h-4 bg-slate-900 rounded-full z-20 flex items-center justify-center border border-white/10 shadow-inner">
+                      <div className="w-2.5 h-2.5 rounded-full bg-black/80 mr-2 border border-white/10"></div>
+                      <div className="w-1.5 h-1.5 rounded-full bg-blue-900/60"></div>
+                    </div>
+
+                    {/* Screen Content */}
+                    <div className="w-full h-full pt-1 pb-1 px-0.5 bg-black overflow-hidden flex items-center justify-center">
+                      <img
+                        src={selectedApp.screenshots[activeScreenshot]}
+                        alt={`${selectedApp.name} screenshot ${activeScreenshot + 1}`}
+                        className="w-full h-full object-cover object-top rounded-[28px]"
+                      />
+                    </div>
+
+                    {/* Bottom Home Indicator Bar */}
+                    <div className="absolute bottom-1.5 w-24 h-1 bg-white/40 rounded-full z-20"></div>
                   </div>
 
-                  {/* Thumbnail Row */}
-                  <div className="flex gap-2 overflow-x-auto pb-2 pt-2 px-1 scrollbar-thin">
-                    {selectedApp.screenshots.map((screen, idx) => (
-                      <button
-                        key={idx}
-                        onClick={() => setActiveScreenshot(idx)}
-                        className={`relative flex-shrink-0 w-14 h-24 rounded-xl overflow-hidden border transition-all ${
-                          activeScreenshot === idx
-                            ? 'border-violet-500 ring-2 ring-violet-500/50 scale-105'
-                            : 'border-white/10 opacity-50 hover:opacity-100'
-                        }`}
-                      >
-                        <img
-                          src={screen}
-                          alt={`Thumb ${idx + 1}`}
-                          className="w-full h-full object-cover"
-                        />
-                      </button>
-                    ))}
+                  {/* Horizontal Scrollable Row of Phone Mockup Cards */}
+                  <div>
+                    <h4 className="text-xs font-semibold uppercase tracking-wider text-white/40 mb-3">
+                      All App Screens ({selectedApp.screenshots.length})
+                    </h4>
+                    <div className="flex gap-3 overflow-x-auto pb-3 pt-1 px-1 scrollbar-thin scrollbar-thumb-white/20">
+                      {selectedApp.screenshots.map((screen, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => setActiveScreenshot(idx)}
+                          className={`relative flex-shrink-0 w-[125px] h-[255px] bg-black border-[4px] rounded-[20px] overflow-hidden shadow-lg transition-all duration-300 ${
+                            activeScreenshot === idx
+                              ? 'border-violet-500 ring-2 ring-violet-500/60 scale-105 shadow-violet-500/30'
+                              : 'border-slate-800 opacity-60 hover:opacity-100 hover:scale-[1.02]'
+                          }`}
+                        >
+                          {/* Mini Camera Notch */}
+                          <div className="absolute top-1 left-1/2 -translate-x-1/2 w-8 h-1.5 bg-slate-900 rounded-full z-20"></div>
+
+                          {/* Screen Image */}
+                          <img
+                            src={screen}
+                            alt={`Mockup screen ${idx + 1}`}
+                            className="w-full h-full object-cover object-top rounded-[14px]"
+                          />
+
+                          {/* Mini Home Bar */}
+                          <div className="absolute bottom-1 left-1/2 -translate-x-1/2 w-10 h-0.5 bg-white/30 rounded-full z-20"></div>
+                        </button>
+                      ))}
+                    </div>
                   </div>
                 </div>
               )}

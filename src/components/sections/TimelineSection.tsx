@@ -78,6 +78,14 @@ const timeline = [
             href: 'https://builder.aws.com/content/3AiVAgV9sh4C2Si39FRcUVmT5H4/aideas-finalist-truthlayer-the-five-signal-ai-verification-engine',
         },
     },
+    {
+        id: 9,
+        year: '2026',
+        title: 'Graduated B.Tech in CSE (CGPA 8.79)',
+        organization: 'Rashtrasant Tukadoji Maharaj Nagpur University',
+        description: 'Successfully graduated with a Bachelor of Technology degree in Computer Science & Engineering.',
+        type: 'education',
+    },
 ];
 
 const typeStyles = {

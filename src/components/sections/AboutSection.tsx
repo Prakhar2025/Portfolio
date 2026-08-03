@@ -81,7 +81,7 @@ export default function AboutSection() {
                             <span className="text-violet-400 font-medium">Top 200 nationwide</span>{' '}from 40,000+ AI builders across India.
                         </p>
                         <p className="text-lg text-white/70 leading-relaxed text-justify hyphens-auto">
-                            Currently in my final year of B.Tech CSE (CGPA&nbsp;8.79), shipping production systems and deepening my expertise in LLM orchestration, serverless AWS architecture, and scalable API design.
+                            Graduated with a B.Tech degree in Computer Science & Engineering (CGPA&nbsp;8.79), shipping production systems and deepening my expertise in LLM orchestration, serverless AWS architecture, and scalable API design.
                         </p>
 
                         {/* Stats */}

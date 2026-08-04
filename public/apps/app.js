@@ -147,8 +147,8 @@ const KRAFTOR_APPS = [
     developer: "Prakhar",
     accentColor: "var(--color-cloudkitchen)",
     accentRgb: "239, 68, 68", // flame red
-    downloadUrl: "https://expo.dev/accounts/kraftor/projects/cloud-kitchen-app/builds/9c591c38-e993-42a6-96d5-2c05a6315de5",
-    downloadLabel: "Download Expo Build",
+    downloadUrl: "app-data/cloud-kitchen/cloud-kitchen.apk",
+    downloadLabel: "Download APK File",
     downloadIcon: "download",
     logoSvg: `
       <svg viewBox="0 0 100 100">
